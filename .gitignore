@@ -1,0 +1,15 @@
+data_cache/
+_kaggle_tmp/
+kaggle_data/
+__pycache__/
+*.pyc
+.venv/
+
+# generated locally by the demo
+S1.npz
+S2.npz
+S3.npz
+qc_result.json
+
+# internal application materials — not part of this repository
+realizuemost/
