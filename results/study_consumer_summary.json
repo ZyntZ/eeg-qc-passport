@@ -1,0 +1,166 @@
+{
+ "engine": "0.5.0",
+ "dataset": {
+  "name": "UCI EEG Eye State (Kaggle: robikscube/eye-state-classification-eeg-dataset)",
+  "device": "Emotiv EPOC — потребительская гарнитура, 14 каналов, 128 Гц",
+  "license": "CC0-1.0",
+  "ground_truth": "eyeDetection: видеометка положения глаз (0 открыты / 1 закрыты)",
+  "n_epochs": 14980,
+  "duration_min": 2.0,
+  "sampling_note": "эпохи по 1 семплу; при 128 Гц запись ≈ 2 мин"
+ },
+ "alpha_by_channel": [
+  {
+   "channel": "AF3",
+   "median_ratio": 1.15,
+   "responsive_share": 0.9
+  },
+  {
+   "channel": "F7",
+   "median_ratio": 1.031,
+   "responsive_share": 1.9
+  },
+  {
+   "channel": "F3",
+   "median_ratio": 1.076,
+   "responsive_share": 3.8
+  },
+  {
+   "channel": "FC5",
+   "median_ratio": 1.07,
+   "responsive_share": 2.8
+  },
+  {
+   "channel": "T7",
+   "median_ratio": 1.173,
+   "responsive_share": 2.8
+  },
+  {
+   "channel": "P7",
+   "median_ratio": 0.972,
+   "responsive_share": 0.9
+  },
+  {
+   "channel": "O1",
+   "median_ratio": 1.075,
+   "responsive_share": 3.8
+  },
+  {
+   "channel": "O2",
+   "median_ratio": 1.047,
+   "responsive_share": 0.0
+  },
+  {
+   "channel": "P8",
+   "median_ratio": 0.995,
+   "responsive_share": 0.9
+  },
+  {
+   "channel": "T8",
+   "median_ratio": 1.156,
+   "responsive_share": 0.9
+  },
+  {
+   "channel": "FC6",
+   "median_ratio": 0.965,
+   "responsive_share": 3.8
+  },
+  {
+   "channel": "F4",
+   "median_ratio": 1.063,
+   "responsive_share": 2.8
+  },
+  {
+   "channel": "F8",
+   "median_ratio": 1.037,
+   "responsive_share": 0.9
+  },
+  {
+   "channel": "AF4",
+   "median_ratio": 1.109,
+   "responsive_share": 0.9
+  }
+ ],
+ "alpha_occipital": [
+  {
+   "channel": "O1",
+   "median_ratio": 1.075,
+   "responsive_share": 3.8
+  },
+  {
+   "channel": "O2",
+   "median_ratio": 1.047,
+   "responsive_share": 0.0
+  }
+ ],
+ "alpha_best_channel": {
+  "channel": "T7",
+  "median_ratio": 1.173,
+  "responsive_share": 2.8
+ },
+ "alpha_verdict": {
+  "max_median_ratio": 1.173,
+  "physionet_occipital_ratio": 3.52,
+  "interpretation": "На потребительской гарнитуре alpha-эффект близок к шуму (макс. ×1.17 против ×3,52 на клиническом приборе): разные электроды, референс и фильтрация. Учебный вывод: на consumer-железе нельзя обещать «студент увидит alpha» без предварительной проверки."
+ },
+ "blinks": {
+  "channels": [
+   {
+    "channel": "AF3",
+    "events": 13,
+    "share_with_eyes_open": 84.6
+   },
+   {
+    "channel": "AF4",
+    "events": 8,
+    "share_with_eyes_open": 87.5
+   },
+   {
+    "channel": "F7",
+    "events": 10,
+    "share_with_eyes_open": 80.0
+   },
+   {
+    "channel": "F8",
+    "events": 4,
+    "share_with_eyes_open": 100.0
+   }
+  ],
+  "interpretation": "Моргания в лобных каналах совпадают с открытыми глазами в 80–88% случаев: детектор QC-движка воспроизводит объективную видеометку без обучения."
+ },
+ "device_profile": {
+  "median_dc_uv": {
+   "AF3": 4294.0,
+   "F7": 4006.0,
+   "F3": 4263.0,
+   "FC5": 4121.0,
+   "T7": 4339.0,
+   "P7": 4618.0,
+   "O1": 4070.0,
+   "O2": 4613.0,
+   "P8": 4199.0,
+   "T8": 4229.0,
+   "FC6": 4201.0,
+   "F4": 4277.0,
+   "F8": 4603.0,
+   "AF4": 4355.0
+  },
+  "std_uv": {
+   "AF3": 48.5,
+   "F7": 38.9,
+   "F3": 40.3,
+   "FC5": 21.2,
+   "T7": 30.7,
+   "P7": 33.0,
+   "O1": 25.8,
+   "O2": 24.4,
+   "P8": 34.9,
+   "T8": 34.0,
+   "FC6": 30.7,
+   "F4": 37.5,
+   "F8": 53.5,
+   "AF4": 31.4
+  },
+  "interpretation": "DC-смещение ~4000 мкВ и иной масштаб шума: без калибровки профиля правила v0.5 блокируют такое железо — что и подтверждается условием A."
+ }
+}

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite this project and the source datasets."
+title: "EEG QC passport: deterministic quality control for teaching EEG labs"
+version: "0.5.0"
+date-released: "2026-11-21"
+abstract: "Deterministic QC engine that separates technical validity of an EEG record from physiological result. Validated on PhysioNet EEGMMIDB (109 subjects) and UCI EEG Eye State."
+license: MIT
+authors:
+  - name: "EEG QC passport contributors"
+references:
+  - type: dataset
+    title: "EEG Motor Movement/Imagery Dataset (v1.0.0)"
+    authors:
+      - family-names: Schalk
+        given-names: Gerwin
+    doi: 10.13026/C28G6P
+    year: 2009
+    license: ODC-By-1.0

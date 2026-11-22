@@ -1,0 +1,103 @@
+{
+ "engine": "0.5.0",
+ "dataset": {
+  "name": "PhysioNet EEGMMIDB v1.0.0",
+  "authors": "Schalk G. et al. (Wadsworth Center)",
+  "doi": "10.13026/C28G6P",
+  "license": "ODC-By 1.0",
+  "device": "BCI2000, 64 канала, 160 Гц",
+  "runs": "R01 глаза открыты, R02 закрыты, ~60 с каждая"
+ },
+ "design": {
+  "subjects": 109,
+  "files": 218,
+  "windows": "для alpha — 10–55 с; моргания/ступеньки исключаются автоматически"
+ },
+ "conditions": {
+  "A_без_калибровки": {
+   "n": 109,
+   "pass_share": 12.8,
+   "block_share": 87.2,
+   "profile_ok_share": 63.3,
+   "mean_usable": 1.93,
+   "median_blinks": 14.0,
+   "median_steps": 141.0,
+   "share_records_with_hum": 44.0,
+   "share_records_with_steps": 100.0,
+   "share_records_with_blinks": 99.1,
+   "share_records_bridged": 2.8
+  },
+  "B_после_калибровки": {
+   "n": 109,
+   "pass_share": 100.0,
+   "block_share": 0.0,
+   "profile_ok_share": 100.0,
+   "mean_usable": 5.94,
+   "median_blinks": 14.0,
+   "median_steps": 16.0,
+   "share_records_with_hum": 44.0,
+   "share_records_with_steps": 89.9,
+   "share_records_with_blinks": 99.1,
+   "share_records_bridged": 2.8
+  }
+ },
+ "alpha_by_channel": {
+  "O1": {
+   "median_log10": 0.547,
+   "median_ratio": 3.52,
+   "share_responsive": 79.8
+  },
+  "O2": {
+   "median_log10": 0.539,
+   "median_ratio": 3.46,
+   "share_responsive": 80.7
+  },
+  "T3": {
+   "median_log10": 0.182,
+   "median_ratio": 1.52,
+   "share_responsive": 35.8
+  },
+  "T4": {
+   "median_log10": 0.234,
+   "median_ratio": 1.71,
+   "share_responsive": 47.7
+  },
+  "Fp1": {
+   "median_log10": 0.151,
+   "median_ratio": 1.42,
+   "share_responsive": 38.5
+  },
+  "Fp2": {
+   "median_log10": 0.174,
+   "median_ratio": 1.49,
+   "share_responsive": 39.4
+  }
+ },
+ "share_subjects_occipital_response": 83.5,
+ "share_subjects_no_alpha": 15.6,
+ "share_subjects_any_channel_response": 85.3,
+ "no_response_subjects": [
+  "S005",
+  "S006",
+  "S019",
+  "S031",
+  "S034",
+  "S036",
+  "S037",
+  "S048",
+  "S051",
+  "S058",
+  "S067",
+  "S068",
+  "S076",
+  "S088",
+  "S096",
+  "S099",
+  "S100",
+  "S101"
+ ],
+ "median_rms_range": [
+  11.0,
+  106.2
+ ]
+}
