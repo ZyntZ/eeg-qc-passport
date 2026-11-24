@@ -10,11 +10,16 @@ import numpy as np
 from scipy.signal import welch, butter, filtfilt, find_peaks, iirnotch
 from scipy.stats import linregress
 
-DEVICE_PROFILE = dict(name='NeuroPlay-6C (профиль по паспорту)', rms_brain_uv=(1.5, 40.0),
-                       note='абсолютные пороги имеют смысл только для откалиброванного профиля прибора')
+DEVICE_PROFILE = dict(name='NeuroPlay-6C (инженерное допущение, не паспорт)', rms_brain_uv=(1.5, 40.0),
+                       note='диапазон RMS — допущение из рабочего диапазона станции; '
+                            'калибровать на своём приборе, абсолютные пороги без калибровки не переносятся')
 RULESET = dict(version='0.5.0', sat_uv=200.0, flat_brain_uv=0.8, hum_db=10*np.log10(0.02),
                bridge_corr=0.995, step_uv=25.0, alpha_log10=0.25, blink_uv=80.0,
-               min_usable=4, alpha_channels=['O1','O2','T3','T4'])
+               min_usable=4,
+               # Затылочные каналы, где альфа-ответ ожидаем физиологически.
+               # F7/F8 (передне-височные) сюда НЕ входят: это не затылок, и требовать
+               # от них альфу как критерий пригодности — ошибка методики.
+               alpha_channels=['O1','O2'])
 
 def _bp(x, fs, lo, hi, order=2):
     b, a = butter(order, [lo/(fs/2), min(hi, fs/2*0.99)/(fs/2)], btype='band')
@@ -148,7 +153,7 @@ def analyze(data, fs, ch, eyes_closed=(36, 74), eyes_open=(76, 102)):
     if len(usable) < RULESET['min_usable']:
         reasons.append(f'годных каналов {len(usable)} < {RULESET["min_usable"]}')
     if not occ_usable:
-        reasons.append('нет ни одного годного затылочно-височного канала (O1/O2/T3/T4) для урока об alpha')
+        reasons.append('нет ни одного годного затылочного канала (O1/O2) для урока об alpha')
     resp = [r.name for r in occ_usable if r.alpha_responsive]
     nonresp = [r.name for r in occ_usable if r.alpha_responsive is False]
     if not device_ok:

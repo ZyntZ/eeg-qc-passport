@@ -16,7 +16,7 @@ A_only = A[A['condition'].str.startswith('A')]
 
 # 1) alpha по каналам: распределение log10(closed/open), N = число строк в study_results.csv
 fig, ax = plt.subplots(figsize=(9.4, 4.3), dpi=170)
-chs = ['Fp1','Fp2','T3','T4','O1','O2']
+chs = ['Fp1','Fp2','F7','F8','O1','O2']
 data = [B[f'alpha_{c}'].values for c in chs]
 bp = ax.boxplot(data, tick_labels=chs, patch_artist=True, widths=0.55,
                 medianprops=dict(color='#fff', lw=1.6))
@@ -50,12 +50,13 @@ ax.set_title(f"Alpha-реакция при закрытии глаз: у {S['sha
 ax.grid(alpha=0.2, axis='y')
 plt.tight_layout(); plt.savefig('results/fig2_response_share.png'); plt.close()
 
-# 3) два условия: до/после калибровки
+# 3) два условия: до/после калибровки — ОТЛОЖЕННАЯ ПРОВЕРКА (не та половина, на которой считали)
+CAL = json.load(open('results/calibration.json', encoding='utf-8'))
 fig, ax = plt.subplots(figsize=(9.4, 3.8), dpi=170)
-conds = ['A_без_калибровки','B_после_калибровки']
-labels = ['A: наши пороги\nна чужом приборе', 'B: после калибровки\nпод профиль прибора']
-passes = [S['conditions'][c]['pass_share'] for c in conds]
-blocks = [S['conditions'][c]['block_share'] for c in conds]
+keys = ['A_default', 'B_calibrated']
+labels = ['A: пороги по умолчанию\nна чужом приборе', 'B: пороги, выведенные\nиз профиля прибора']
+passes = [CAL[k]['pass_share'] for k in keys]
+blocks = [CAL[k]['block_share'] for k in keys]
 x = np.arange(2); w = 0.34
 b1 = ax.bar(x-w/2, passes, w, color=ACC3, label='не блокируется')
 b2 = ax.bar(x+w/2, blocks, w, color=ACC2, label='BLOCK (заблокировано)')
@@ -64,7 +65,7 @@ for bars in (b1, b2):
         ax.text(b.get_x()+b.get_width()/2, b.get_height()+2, f'{b.get_height():.0f}%', ha='center', fontsize=9.5, fontweight='bold')
 ax.set_xticks(x); ax.set_xticklabels(labels); ax.set_ylim(0, 108)
 ax.set_ylabel('доля записей, %'); ax.legend(frameon=False, fontsize=9)
-ax.set_title('Условие A (без калибровки) и условие B (пороги под прибор)', fontsize=10.5, loc='left')
+ax.set_title(f'Проверка на отложенной половине (n={CAL["holdout_subjects"]} чел., пороги на них не считались)', fontsize=10.5, loc='left')
 ax.grid(alpha=0.2, axis='y')
 plt.tight_layout(); plt.savefig('results/fig3_calibration.png'); plt.close()
 

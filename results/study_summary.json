@@ -29,14 +29,14 @@
   },
   "B_после_калибровки": {
    "n": 109,
-   "pass_share": 100.0,
-   "block_share": 0.0,
-   "profile_ok_share": 100.0,
+   "pass_share": 98.2,
+   "block_share": 1.8,
+   "profile_ok_share": 98.2,
    "mean_usable": 5.94,
    "median_blinks": 14.0,
-   "median_steps": 16.0,
+   "median_steps": 14.0,
    "share_records_with_hum": 44.0,
-   "share_records_with_steps": 89.9,
+   "share_records_with_steps": 89.0,
    "share_records_with_blinks": 99.1,
    "share_records_bridged": 2.8
   }
@@ -52,12 +52,12 @@
    "median_ratio": 3.46,
    "share_responsive": 80.7
   },
-  "T3": {
+  "F7": {
    "median_log10": 0.182,
    "median_ratio": 1.52,
    "share_responsive": 35.8
   },
-  "T4": {
+  "F8": {
    "median_log10": 0.234,
    "median_ratio": 1.71,
    "share_responsive": 47.7
@@ -74,7 +74,7 @@
   }
  },
  "share_subjects_occipital_response": 83.5,
- "share_subjects_no_alpha": 15.6,
+ "share_subjects_no_alpha": 16.5,
  "share_subjects_any_channel_response": 85.3,
  "no_response_subjects": [
   "S005",
@@ -99,5 +99,25 @@
  "median_rms_range": [
   11.0,
   106.2
- ]
+ ],
+ "calibration": {
+  "scheme": "пороги выведены из профиля прибора; калибровка и проверка на разных половинах",
+  "calibration_subjects": 54,
+  "holdout_subjects": 55,
+  "median_noise_uv": 33.87,
+  "window_jump": {
+   "n": 14154,
+   "p95_uv": 24.15,
+   "p99_uv": 44.91
+  },
+  "thresholds": {
+   "flat_brain_uv": 3.39,
+   "step_uv": 96.6,
+   "sat_uv": 1000.0
+  },
+  "profile": [
+   10.16,
+   101.6
+  ]
+ }
 }
