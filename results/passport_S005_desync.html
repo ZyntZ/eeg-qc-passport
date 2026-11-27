@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Паспорт записи ЭЭГ — испытуемый S005 (чистый сигнал без альфа-реакции)</title>
+<style>
+body{font-family:Inter,-apple-system,Segoe UI,Arial,sans-serif;margin:28px auto;max-width:940px;color:#141923;line-height:1.45;background:#f8fafc;padding:0 18px}
+.card{background:#fff;border:1px solid #dde3ea;border-radius:10px;padding:20px 24px;margin-bottom:16px}
+.hdr{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.badge{background:#b76e00;color:#fff;padding:6px 14px;border-radius:6px;font-weight:700;font-size:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:#f1f5f9;border-radius:8px;padding:12px 16px;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+th,td{border-bottom:1px solid #e2e8f0;padding:8px 8px;text-align:left}
+th{background:#f8fafc;color:#475569;font-weight:600}
+code{background:#e2e8f0;padding:2px 5px;border-radius:4px;font-size:12.5px}
+.muted{color:#64748b;font-size:12.5px}
+</style></head><body>
+<div class="card">
+  <div class="hdr">
+    <div><h2 style="margin:0">Паспорт записи ЭЭГ — испытуемый S005 (чистый сигнал без альфа-реакции)</h2>
+    <div class="muted">EEG QC Passport v0.6.0 · профиль: BCI2000 64-ch (профиль откалиброван на n=54) · hash правил: <code>b5f197134269</code></div></div>
+    <div class="badge">ГОДНА С ЗАМЕЧАНИЯМИ (WARN)</div>
+  </div>
+</div>
+<div class="grid">
+  <div class="card"><h3 style="margin-top:0">1. Техническое качество сигнала</h3>
+    <p><b>Медианный RMS (1–40 Гц):</b> 14.99 мкВ · <b>Годных каналов:</b> 6 из 6 (Fp1, Fp2, F7, F8, O1, O2)</p>
+    <p><b>Исключено артефактных участков:</b> 16.2 с (морганий ЭОГ: 12)</p>
+    <p>Критических технических нарушений нет.</p>
+  </div>
+  <div class="card"><h3 style="margin-top:0">2. Физиологический результат пробы (ГЗ / ГО)</h3>
+    <p><b>Заключение по пробе Бергера (8–13 Гц):</b><br>реакция на закрытие глаз обнаружена: O1</p>
+    <p class="muted">Учебный отчёт: не является медицинским диагнозом или оценкой испытуемого.</p>
+  </div>
+</div>
+<div class="card"><h3 style="margin-top:0">Детализация по каналам</h3>
+  <table><thead><tr><th>Канал</th><th>Статус</th><th>RMS шум</th><th>Импеданс</th><th>Дрейф</th><th>Альфа ГЗ/ГО</th><th>Диагностика канала</th></tr></thead>
+  <tbody><tr><td><b>Fp1</b></td><td style='color:#b76e00;font-weight:700'>WARN</td><td>13.6 мкВ</td><td>7.0 кОм</td><td>-0.1 мкВ/с</td><td>×1.20 (log10=+0.08)</td><td>сетевая наводка 60 Гц</td></tr><tr><td><b>Fp2</b></td><td style='color:#b76e00;font-weight:700'>WARN</td><td>15.9 мкВ</td><td>6.8 кОм</td><td>-0.0 мкВ/с</td><td>×0.66 (log10=-0.18)</td><td>сетевая наводка 60 Гц</td></tr><tr><td><b>F7</b></td><td style='color:#b76e00;font-weight:700'>WARN</td><td>32.6 мкВ</td><td>9.2 кОм</td><td>-0.1 мкВ/с</td><td>×1.21 (log10=+0.08)</td><td>сетевая наводка 60 Гц; ступенька контакта (1)</td></tr><tr><td><b>F8</b></td><td style='color:#b76e00;font-weight:700'>WARN</td><td>25.8 мкВ</td><td>8.4 кОм</td><td>+0.1 мкВ/с</td><td>×0.76 (log10=-0.12)</td><td>сетевая наводка 60 Гц</td></tr><tr><td><b>O1</b></td><td style='color:#b76e00;font-weight:700'>WARN</td><td>14.1 мкВ</td><td>6.1 кОм</td><td>+0.0 мкВ/с</td><td>×1.88 (log10=+0.27)</td><td>сетевая наводка 60 Гц</td></tr><tr><td><b>O2</b></td><td style='color:#b76e00;font-weight:700'>WARN</td><td>11.6 мкВ</td><td>6.5 кОм</td><td>+0.0 мкВ/с</td><td>×1.72 (log10=+0.24)</td><td>сетевая наводка 60 Гц</td></tr></tbody></table>
+</div>
+<div class='box'><b>Контрольные суммы исходных файлов (SHA-256, без модификации):</b><ul><li><code>S005R02.edf</code>: <code>bdb498c613cd048a88989928…</code></li><li><code>S005R01.edf</code>: <code>f84f58d7d96bce1700af8b2c…</code></li></ul></div>
+</body></html>

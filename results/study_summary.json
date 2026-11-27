@@ -1,5 +1,5 @@
 {
- "engine": "0.5.0",
+ "engine": "0.6.0",
  "dataset": {
   "name": "PhysioNet EEGMMIDB v1.0.0",
   "authors": "Schalk G. et al. (Wadsworth Center)",
@@ -16,29 +16,29 @@
  "conditions": {
   "A_без_калибровки": {
    "n": 109,
-   "pass_share": 12.8,
-   "block_share": 87.2,
-   "profile_ok_share": 63.3,
-   "mean_usable": 1.93,
-   "median_blinks": 14.0,
-   "median_steps": 141.0,
-   "share_records_with_hum": 44.0,
+   "pass_share": 42.2,
+   "block_share": 57.8,
+   "profile_ok_share": 67.9,
+   "mean_usable": 3.16,
+   "median_blinks": 18.0,
+   "median_steps": 142.0,
+   "share_records_with_hum": 56.0,
    "share_records_with_steps": 100.0,
-   "share_records_with_blinks": 99.1,
-   "share_records_bridged": 2.8
+   "share_records_with_blinks": 100.0,
+   "share_records_bridged": 1.8
   },
   "B_после_калибровки": {
    "n": 109,
-   "pass_share": 98.2,
-   "block_share": 1.8,
-   "profile_ok_share": 98.2,
-   "mean_usable": 5.94,
-   "median_blinks": 14.0,
+   "pass_share": 100.0,
+   "block_share": 0.0,
+   "profile_ok_share": 100.0,
+   "mean_usable": 5.98,
+   "median_blinks": 18.0,
    "median_steps": 14.0,
-   "share_records_with_hum": 44.0,
+   "share_records_with_hum": 59.6,
    "share_records_with_steps": 89.0,
-   "share_records_with_blinks": 99.1,
-   "share_records_bridged": 2.8
+   "share_records_with_blinks": 100.0,
+   "share_records_bridged": 0.9
   }
  },
  "alpha_by_channel": {
@@ -97,7 +97,7 @@
   "S101"
  ],
  "median_rms_range": [
-  11.0,
+  6.9,
   106.2
  ],
  "calibration": {
@@ -116,8 +116,8 @@
    "sat_uv": 1000.0
   },
   "profile": [
-   10.16,
-   101.6
+   6.77,
+   108.4
   ]
  }
 }

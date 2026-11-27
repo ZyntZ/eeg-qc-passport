@@ -151,7 +151,7 @@ CAL_RULES = dict(
     step_uv=round(4.0 * _jump_p95, 1),                 # 4× типичного перепада между окнами
     sat_uv=1000.0,                                     # инженерное допущение rail, не паспорт (см. calibrate_b.py)
 )
-CAL_PROFILE = dict(rms_brain_uv=(round(0.30 * _med, 2), round(3.00 * _med, 1)))
+CAL_PROFILE = dict(rms_brain_uv=(round(0.20 * _med, 2), round(3.20 * _med, 1)))
 
 A = collect('A: наши пороги на чужом приборе (без калибровки)')
 B = collect('B: пороги откалиброваны под профиль прибора',

@@ -1,0 +1,35 @@
+{
+ "before_fix": {
+  "window_s": 3.0,
+  "ready_to_record": false,
+  "status": "FIX_ELECTRODES",
+  "channels": {
+   "Fp1": "PASS",
+   "Fp2": "PASS",
+   "F7": "PASS",
+   "F8": "PASS",
+   "O1": "FAIL",
+   "O2": "FAIL"
+  },
+  "hints": [
+   "O1: нет контакта — поправьте электрод на коже / добавьте гель.",
+   "O2: нет контакта — поправьте электрод на коже / добавьте гель."
+  ]
+ },
+ "after_fix": {
+  "window_s": 3.0,
+  "ready_to_record": true,
+  "status": "READY",
+  "channels": {
+   "Fp1": "PASS",
+   "Fp2": "PASS",
+   "F7": "PASS",
+   "F8": "PASS",
+   "O1": "PASS",
+   "O2": "PASS"
+  },
+  "hints": [
+   "Контакт всех рабочих каналов в норме. Можно начинать запись пробы."
+  ]
+ }
+}

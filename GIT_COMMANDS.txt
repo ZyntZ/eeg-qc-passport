@@ -1,0 +1,12 @@
+Команды для обновления репозитория https://github.com/ZyntZ/eeg-qc-passport до v0.6.0
+
+1. Скопируйте файлы из архива GitHub_Update_v0.6.0_only_changes.zip поверх локального клона eeg-qc-passport.
+2. Удалите случайно попавшую в коммит b207cf25 папку src/ от курсовой работы:
+   git rm -rf src/
+   git rm -f results/fig1_alpha_by_channel.png results/fig2_response_share.png results/fig3_calibration.png results/fig4_found_defects.png results/fig5_two_device_classes.png results/fig6_blinks_vs_groundtruth.png
+3. Проверьте автотесты локально:
+   pytest -v test_qc.py
+4. Зафиксируйте и отправьте изменения:
+   git add README.md requirements.txt qc_engine.py calibrate_b.py run_study.py make_figures.py make_passports.py test_qc.py fetch_data_uci.py fetch_all.sh results/
+   git commit -m "v0.6.0: live electrode guidance, ref crosstalk/drift/EMG/impedance, holdout sens/spec & HTML passports"
+   git push origin main

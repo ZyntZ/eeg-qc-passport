@@ -1,0 +1,151 @@
+{
+ "engine": "0.6.0",
+ "scheme": "holdout: калибровка на 54 чел., независимая проверка на 55 чел.",
+ "calibration_subjects": 54,
+ "holdout_subjects": 55,
+ "profile": {
+  "median_noise_uv": 31.56,
+  "p05_noise_uv": 14.08,
+  "p95_noise_uv": 76.45,
+  "median_amp_p995_uv": 196.7,
+  "window_jump_p95_uv": 18.86,
+  "window_jump_p99_uv": 38.03,
+  "drift_slope_p95_uv_s": 1.6
+ },
+ "thresholds_derived": {
+  "flat_brain_uv": 3.16,
+  "step_uv": 75.4,
+  "drift_uv_s": 10.0,
+  "sat_uv": 1000.0
+ },
+ "profile_rms_bounds_uv": [
+  6.31,
+  101.0
+ ],
+ "A_default": {
+  "n": 55,
+  "pass_share": 43.6,
+  "specificity_pct": 43.6,
+  "block_share": 56.4,
+  "false_rejection_pct": 56.4,
+  "profile_ok_share": 69.1,
+  "mean_usable": 3.27
+ },
+ "A_fixed_lab": {
+  "n": 55,
+  "pass_share": 69.1,
+  "specificity_pct": 69.1,
+  "block_share": 30.9,
+  "false_rejection_pct": 30.9,
+  "profile_ok_share": 83.6,
+  "mean_usable": 4.75
+ },
+ "B_calibrated": {
+  "n": 55,
+  "pass_share": 96.4,
+  "specificity_pct": 96.4,
+  "block_share": 3.6,
+  "false_rejection_pct": 3.6,
+  "profile_ok_share": 96.4,
+  "mean_usable": 5.96
+ },
+ "detection_A": {
+  "condition": "A default",
+  "n_tests": 90,
+  "caught_share": 100.0,
+  "sensitivity_pct": 100.0,
+  "blocked_share": 62.2,
+  "by_defect_pct": {
+   "дрейф базовой линии": 100.0,
+   "наводка": 100.0,
+   "насыщение": 100.0,
+   "плоский канал": 100.0,
+   "помеха референта": 100.0,
+   "ступенька": 100.0
+  }
+ },
+ "detection_A_fixed_lab": {
+  "condition": "A fixed lab",
+  "n_tests": 90,
+  "caught_share": 100.0,
+  "sensitivity_pct": 100.0,
+  "blocked_share": 43.3,
+  "by_defect_pct": {
+   "дрейф базовой линии": 100.0,
+   "наводка": 100.0,
+   "насыщение": 100.0,
+   "плоский канал": 100.0,
+   "помеха референта": 100.0,
+   "ступенька": 100.0
+  }
+ },
+ "detection_B": {
+  "condition": "B calibrated",
+  "n_tests": 90,
+  "caught_share": 100.0,
+  "sensitivity_pct": 100.0,
+  "blocked_share": 23.3,
+  "by_defect_pct": {
+   "дрейф базовой линии": 100.0,
+   "наводка": 100.0,
+   "насыщение": 100.0,
+   "плоский канал": 100.0,
+   "помеха референта": 100.0,
+   "ступенька": 100.0
+  }
+ },
+ "sweep": {
+  "A": {
+   "ступенька": {
+    "20": 92,
+    "30": 100,
+    "50": 100,
+    "75": 100,
+    "100": 100,
+    "200": 100,
+    "500": 100
+   },
+   "насыщение": {
+    "2": 100,
+    "3": 100,
+    "5": 100,
+    "8": 100,
+    "15": 100
+   },
+   "наводка": {
+    "3": 100,
+    "5": 100,
+    "10": 100,
+    "20": 100,
+    "50": 100,
+    "120": 100
+   }
+  },
+  "B": {
+   "ступенька": {
+    "20": 75,
+    "30": 75,
+    "50": 75,
+    "75": 83,
+    "100": 83,
+    "200": 100,
+    "500": 100
+   },
+   "насыщение": {
+    "2": 83,
+    "3": 83,
+    "5": 100,
+    "8": 100,
+    "15": 100
+   },
+   "наводка": {
+    "3": 92,
+    "5": 92,
+    "10": 100,
+    "20": 100,
+    "50": 100,
+    "120": 100
+   }
+  }
+ }
+}

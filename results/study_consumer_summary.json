@@ -1,5 +1,5 @@
 {
- "engine": "0.5.0",
+ "engine": "0.6.0",
  "dataset": {
   "name": "UCI EEG Eye State (Kaggle: robikscube/eye-state-classification-eeg-dataset)",
   "device": "Emotiv EPOC — потребительская гарнитура, 14 каналов, 128 Гц",
